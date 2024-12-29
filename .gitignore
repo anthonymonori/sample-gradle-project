@@ -1,0 +1,29 @@
+## Main folders to ignore across the repo
+gen/
+bin/
+out/
+captures/
+build/
+samples/
+generated/
+
+## Heap dumps
+*.hprof
+
+## Gradle
+.gradle
+local.properties
+
+## Kotlin
+.kotlin/
+
+## IntelliJ
+.idea/
+
+## Android SDK
+.sdk/
+.android-sdk/
+
+## Windows and logs
+*.log
+.DS_Store
