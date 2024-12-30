@@ -13,6 +13,7 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+includeBuild("build-logic")
 include (":layer_0:module_0_1")
 include (":layer_0:module_0_2")
 include (":layer_0:module_0_3")
