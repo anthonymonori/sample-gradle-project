@@ -1,4 +1,4 @@
-package convention
+package com.sample.convention
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project
