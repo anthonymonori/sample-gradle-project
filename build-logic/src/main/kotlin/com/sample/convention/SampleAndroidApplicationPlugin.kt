@@ -1,28 +1,40 @@
-package convention
+package com.sample.convention
 
-import com.android.build.api.dsl.LibraryExtension
+import com.android.build.api.dsl.ApplicationExtension
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.withType
 
-internal class SampleAndroidLibraryPlugin : Plugin<Project> {
+internal class SampleAndroidApplicationPlugin : Plugin<Project> {
     override fun apply(project: Project) {
         with(project) {
             plugins.apply("com.android.library")
             plugins.apply("org.jetbrains.kotlin.android")
             plugins.apply("kotlin-kapt")
 
-            val normalizedName = name.replace(":", "_")
-            extensions.getByType(LibraryExtension::class.java).apply {
-                namespace = "com.example.mylibrary.$normalizedName"
+            extensions.getByType(ApplicationExtension::class.java).apply {
+                namespace = "com.example.myapplication"
                 compileSdk = 33
 
                 defaultConfig {
+                    applicationId = "com.example.myapplication"
                     minSdk = 24
+                    targetSdk = 33
+                    versionCode = 1
+                    versionName = "1.0"
+
                     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
                 }
 
+                buildTypes {
+                    release {
+                        isMinifyEnabled = true
+                        proguardFiles(
+                            getDefaultProguardFile("proguard-android-optimize.txt")
+                        )
+                    }
+                }
                 compileOptions {
                     sourceCompatibility = JavaVersion.VERSION_11
                     targetCompatibility = JavaVersion.VERSION_11

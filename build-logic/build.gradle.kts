@@ -13,19 +13,19 @@ gradlePlugin {
     plugins {
         create("root") {
             id = "sample.$name"
-            implementationClass = "convention.SampleRootPlugin"
+            implementationClass = "com.sample.convention.SampleRootPlugin"
             version = "1.0.0"
         }
 
         create("android.library") {
             id = "sample.$name"
-            implementationClass = "convention.SampleAndroidLibraryPlugin"
+            implementationClass = "com.sample.convention.SampleAndroidLibraryPlugin"
             version = "1.0.0"
         }
 
         create("android.application") {
             id = "sample.$name"
-            implementationClass = "convention.SampleAndroidApplicationPlugin"
+            implementationClass = "com.sample.convention.SampleAndroidApplicationPlugin"
             version = "1.0.0"
         }
     }
