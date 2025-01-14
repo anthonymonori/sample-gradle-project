@@ -1,12 +1,19 @@
 plugins {
+    id("sample.base")
     id("sample.android.library")
+}
+
+sample {
+    features {
+        compose()
+        dagger()
+    }
 }
 
 dependencies { 
     implementation(project(":layer_0:module_0_3"))
     implementation(project(":layer_0:module_0_15"))
     implementation(project(":layer_0:module_0_1"))
-
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
